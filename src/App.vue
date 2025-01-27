@@ -35,7 +35,6 @@
 
 <script setup>
 import { helloInit, checkDays } from "@/utils/getTime.js";
-import { HamburgerButton, CloseSmall } from "@icon-park/vue-next";
 import { mainStore } from "@/store";
 import { Icon } from "@vicons/utils";
 import Loading from "@/components/Loading.vue";
@@ -45,7 +44,6 @@ import Background from "@/components/Background.vue";
 import Footer from "@/components/Footer.vue";
 import Box from "@/views/Box/index.vue";
 import MoreSet from "@/views/MoreSet/index.vue";
-import cursorInit from "@/utils/cursor.js";
 import config from "@/../package.json";
 
 const store = mainStore();
@@ -77,8 +75,6 @@ watch(
 );
 
 onMounted(() => {
-  // 自定义鼠标
-  cursorInit();
 
   // 屏蔽右键
   document.oncontextmenu = () => {
@@ -106,19 +102,11 @@ onMounted(() => {
   window.addEventListener("resize", getWidth);
 
   // 控制台输出
-  const styleTitle1 = "font-size: 20px;font-weight: 600;color: rgb(244,167,89);";
-  const styleTitle2 = "font-size:12px;color: rgb(244,167,89);";
-  const styleContent = "color: rgb(30,152,255);";
-  const title1 = "無名の主页";
-  const title2 = `
- _____ __  __  _______     ____     __
-|_   _|  \\/  |/ ____\\ \\   / /\\ \\   / /
-  | | | \\  / | (___  \\ \\_/ /  \\ \\_/ /
-  | | | |\\/| |\\___ \\  \\   /    \\   /
- _| |_| |  | |____) |  | |      | |
-|_____|_|  |_|_____/   |_|      |_|`;
-  const content = `\n\n版本: ${config.version}\n主页: ${config.home}\nGithub: ${config.github}`;
-  console.info(`%c${title1} %c${title2} %c${content}`, styleTitle1, styleTitle2, styleContent);
+const styleTitle1 = "color:#fff;background:linear-gradient(90deg,#c70fea 0%,#e281df 100%);padding:5px 0;";
+const styleTitle2 = "color:#000;background:linear-gradient(90deg,#e281df 0%,#e4cdde 100%);padding:5px 0;";
+const styleTitle3 = "color:#fff;background:#000;padding:5px 0;";
+
+  console.log(`%c Chr_小屋 %c 唯有南风知吾俞 %c 版本 ${config.version} `, styleTitle1, styleTitle2,styleTitle3);
 });
 
 onBeforeUnmount(() => {

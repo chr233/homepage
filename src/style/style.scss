@@ -197,26 +197,14 @@ a:hover {
 }
 
 // 自定义鼠标
-#cursor {
-  position: fixed;
-  width: 18px;
-  height: 18px;
-  background: #fff;
-  border-radius: 25px;
-  opacity: 0.25;
-  z-index: 10086;
-  pointer-events: none;
-  transition: 0.2s ease-in-out;
-  transition-property: background, opacity, transform;
-
-  &.hidden {
-    opacity: 0;
-  }
-
-  &.active {
-    opacity: 0.5;
-    transform: scale(0.5);
-  }
+a,
+a *,
+button,
+button * {
+  cursor: url(/images/cur/link.cur), auto;
+}
+* {
+  cursor: url(/images/cur/normal.cur), auto;
 }
 
 // 滚动条样式
