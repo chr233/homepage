@@ -94,6 +94,7 @@ export default ({ mode }) =>
     server: {
       port: "3000",
       open: true,
+      https: false,
     },
     resolve: {
       alias: [
